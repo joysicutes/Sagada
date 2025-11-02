@@ -20,13 +20,13 @@
     <div class="navbar">
         <div class="container">
             <div class="logo">
-                <img src="logo.png" alt="Logo">
+                <img src="assets/logo.png" alt="Logo">
             </div>
             <nav class="nav-links">
                 <a href="#frontview">Home</a>
                 <a href="#about">Culture</a>
-                <a href="#">Travel</a>
-                <a href="#">Food</a>
+                <a href="travel.html">Travel</a>
+                <a href="travel.html">Food</a>
             </nav>
         </div>
     </div>
@@ -198,7 +198,6 @@
         const navLinks = document.querySelector('.nav-links');
         const menuToggle = document.querySelector('.menu-toggle');
 
-        // Navbar background on scroll
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
@@ -206,8 +205,7 @@
                 navbar.classList.remove('scrolled');
             }
         });
-
-        // Mobile menu toggle
+        
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });

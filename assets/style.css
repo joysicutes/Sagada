@@ -100,6 +100,96 @@ body {
     transform: scale(0.9);
 }
 
+
+.mini-navbar {
+    background: rgba(0, 30, 30, 0.9);
+    padding: 8px 0;
+    text-align: left;
+    position: fixed;
+    top: 60px;
+    /* adjust based on your navbar height */
+    width: 100%;
+    z-index: 999;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.mini-navbar.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.mini-navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 50px;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 200px;
+    gap: 30px;
+}
+
+.mini-navbar ul li a {
+    color: #f5f5f5;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.mini-navbar ul li a:hover {
+    color: #00bfa6;
+}
+
+.mini-navbar a::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 2px;
+    background: #00bfa6;
+    transition: width 0.3s ease;
+    margin-top: 5px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+    .mini-navbar ul {
+        padding: 0 30px;
+        gap: 20px;
+    }
+
+    .mini-navbar ul li a {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .mini-navbar ul {
+        justify-content: center; 
+        gap: 15px;
+        padding: 0 20px;
+    }
+
+    .mini-navbar ul li a {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .mini-navbar ul {
+        flex-direction: column; 
+        align-items: center;
+        gap: 12px;
+        padding: 10px;
+    }
+
+    .mini-navbar ul li a {
+        font-size: 0.85rem;
+    }
+}
+
 /* frontview */
 .frontview {
     display: flex;
@@ -212,7 +302,6 @@ body {
     }
 }
 
-
 /*about*/
 
 .about-sagada {
@@ -296,7 +385,6 @@ body {
     object-fit: cover;
 }
 
-/* RESPONSIVE */
 @media (max-width: 992px) {
     .about-section {
         flex-direction: column;
@@ -330,6 +418,7 @@ body {
     }
 }
 
+/*visit*/
 
 .visit {
     width: 100%;
@@ -407,7 +496,6 @@ body {
     box-shadow: 0 10px 20px rgba(0, 191, 166, 0.3);
 }
 
-/* Responsive */
 @media (max-width: 900px) {
     .season {
         flex-direction: column;
@@ -517,7 +605,60 @@ body {
         flex-direction: column;
         align-items: center;
     }
+
+    .festival {
+        max-width: 400px;
+        width: 90%;
+    }
 }
+
+
+@media (max-width: 900px) {
+    .seasons {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .season {
+        max-width: 400px;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .visit-intro h2 {
+        font-size: 2rem;
+    }
+
+    .visit-intro p {
+        font-size: 1rem;
+    }
+
+    .season h3 {
+        font-size: 1.5rem;
+    }
+
+    .season h4,
+    .season p {
+        font-size: 1rem;
+    }
+
+    .festivals-part h2 {
+        font-size: 2rem;
+    }
+
+    .festival-text h3 {
+        font-size: 1.2rem;
+    }
+
+    .festival-text h4,
+    .festival-text p {
+        font-size: 1rem;
+    }
+}
+
+
 
 /*footer*/
 
@@ -531,13 +672,13 @@ body {
 
 .container-footer {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 50px; 
+    gap: 50px;
 }
 
-.footer-text{
+.footer-text {
     align-items: flex-start;
     text-align: left;
 }
@@ -566,7 +707,7 @@ body {
     color: #cfe9e8;
 }
 
-.footer-contacts{
+.footer-contacts {
     text-align: right;
     align-items: flex-end;
 }
@@ -604,14 +745,7 @@ body {
     color: #80cbc4;
 }
 
-/* Responsive */
 @media (max-width: 900px) {
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
     .footer-logo p {
         max-width: 100%;
     }
@@ -619,5 +753,827 @@ body {
     .social-icons a {
         margin-right: 15px;
         font-size: 1.5rem;
+    }
+
+    .container-footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .footer-text,
+    .footer-contacts {
+        text-align: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-text h1.footer-tagline {
+        font-size: 1.5rem;
+    }
+
+    .footer-text h1.footer2-tagline {
+        font-size: 2rem;
+    }
+
+    .footer-text p,
+    .footer-contacts p {
+        font-size: 0.95rem;
+    }
+}
+
+
+/*travel.html*/
+
+.travel-banner {
+    width: 100%;
+    min-height: 100vh;
+    /* Makes it almost full-screen height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 10%;
+    background: linear-gradient(180deg, #004d40, #0d1b2a);
+    color: #e0f7fa;
+    text-align: center;
+}
+
+.travel-text .tbanner-tagline {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #e0f7fa;
+    font-family: "Lora", "Times New Roman", serif;
+}
+
+.travel-text .tbanner2-tagline {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #00bfa6;
+    font-family: 'Dancing Script', cursive;
+    margin-top: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+
+}
+
+.travel-text p {
+    font-size: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    line-height: 1.6;
+    color: #cfe9e8;
+}
+
+.travel-catg {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.catg-card {
+    position: relative;
+    flex: 1;
+    min-width: 220px;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.catg-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.catg-card:hover img {
+    transform: scale(1.05);
+}
+
+.info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 191, 166, 0.8), rgba(0, 191, 166, 0));
+    color: #ffffff;
+    text-align: center;
+}
+
+.info h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 900px) {
+    .categories-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .category-card {
+        width: 90%;
+        margin-bottom: 30px;
+    }
+
+    .category-info h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/*places*/
+.places {
+    padding: 60px 5%;
+    background: linear-gradient(180deg, #004d40, #0d1b2a);
+    color: #e0f7fa;
+}
+
+.title {
+    font-size: 3rem;
+    font-family: 'Dancing Script', cursive;
+    color: #ffffff;
+    text-align: center;
+}
+
+.places>p {
+    font-size: 1.4rem;
+    color: whitesmoke;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.place-row {
+    flex: 1 1 48%;
+    max-width: 48%;
+    background: rgba(0, 191, 166, 0.08);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.place-row:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.place-carousel img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.place-info {
+    padding: 15px;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.place-info h3 {
+    font-size: 2rem;
+    color: #00ffe0;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.place-info p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #cfe9e8;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.btn-map {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #00bfa6;
+    color: #000000;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 800;
+    transition: background 0.3s ease;
+}
+
+.btn-map:hover {
+    background: #00e5ff;
+}
+
+@media (max-width: 992px) {
+    .place-row {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .place-carousel img {
+        height: 300px;
+    }
+
+    .place-info h3 {
+        font-size: 1.6rem;
+    }
+
+    .place-info p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .places {
+        padding: 40px 3%;
+    }
+
+    .place-row {
+        padding: 15px;
+    }
+
+    .place-carousel img {
+        height: 250px;
+    }
+
+    .places p {
+        font-size: 1.1rem;
+    }
+}
+
+
+
+/*waters*/
+.waters {
+    padding: 60px 5%;
+    background: linear-gradient(180deg, #26313d, #004d40);
+    color: #e0f7fa;
+}
+
+.title {
+    font-size: 3rem;
+    font-family: 'Dancing Script', cursive;
+    color: #ffffff;
+    text-align: center;
+}
+
+.waters>p {
+    font-size: 1.4rem;
+    color: whitesmoke;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.place-row {
+    flex: 1 1 48%;
+    max-width: 48%;
+    background: rgba(0, 191, 166, 0.08);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.place-row:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.place-carousel img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.place-info {
+    padding: 15px;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.place-info h3 {
+    font-size: 2rem;
+    color: #00ffe0;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.place-info p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #cfe9e8;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.btn-map {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #00bfa6;
+    color: #000000;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 800;
+    transition: background 0.3s ease;
+}
+
+.btn-map:hover {
+    background: #00e5ff;
+}
+
+@media (max-width: 992px) {
+    .place-row {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .place-carousel img {
+        height: 300px;
+    }
+
+    .place-info h3 {
+        font-size: 1.6rem;
+    }
+
+    .place-info p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .places {
+        padding: 40px 3%;
+    }
+
+    .place-row {
+        padding: 15px;
+    }
+
+    .place-carousel img {
+        height: 250px;
+    }
+
+    .places p {
+        font-size: 1.1rem;
+    }
+}
+
+
+/*foods */
+.foods {
+    padding: 60px 5%;
+    background: linear-gradient(180deg, #036958, #011e19);
+    color: #f9f9f9;
+    text-align: center;
+}
+
+.foods>p {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    color: #e6f2f1;
+}
+
+.foods-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.food-card {
+    flex: 1 1 30%;
+    max-width: 30%;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.food-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
+}
+
+.food-card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.food-card h3 {
+    font-size: 1.8rem;
+    margin: 15px 0 10px;
+    color: #00ffe0;
+}
+
+.food-card p {
+    font-size: 1.1rem;
+    color: #d7eceb;
+    margin-bottom: 15px;
+}
+
+.btn-restaurant {
+    display: inline-block;
+    padding: 10px 22px;
+    background: #00c9af;
+    color: #000;
+    font-weight: 800;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.btn-restaurant:hover {
+    background: #00f7ff;
+}
+
+@media (max-width: 992px) {
+    .food-card {
+        flex: 1 1 45%;
+        max-width: 45%;
+    }
+}
+
+@media (max-width: 600px) {
+    .food-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .foods {
+        padding: 45px 4%;
+    }
+}
+
+/* resto*/
+.restaurants {
+    padding: 60px 5%;
+    background: linear-gradient(180deg, #011e19, #036958);
+    color: #f4fefe;
+    text-align: center;
+}
+
+.restaurants>p {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    color: #d8f4f2;
+}
+
+.restaurant-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.restaurant-card {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.restaurant-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
+}
+
+.crsl-resto {
+    width: 40%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.crslresto img {
+    height: 350%;
+    object-fit: cover;
+}
+
+.crslresto-control-prev-icon,
+.crslresto-control-next-icon {
+    width: 35px;
+    height: 35px;
+    background-size: 100%;
+    filter: invert(1);
+}
+
+.resto-info {
+    padding: 20px;
+    text-align: left;
+    width: 60%;
+}
+
+.resto-info h3 {
+    font-size: 1.9rem;
+    color: #00ffe9;
+    margin-bottom: 8px;
+}
+
+.stars {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.star {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.35);
+    line-height: 1;
+}
+
+.star.filled {
+    color: #ffd166;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.star.half {
+    color: #ffd166;
+    opacity: 0.85;
+}
+
+.rating-number {
+    font-size: 0.95rem;
+    color: #cdeeea;
+    margin-left: 6px;
+}
+
+.resto-info p {
+    font-size: 1.05rem;
+    color: #bfe9e6;
+    margin-bottom: 12px;
+}
+
+.resto-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn-resto {
+    display: inline-block;
+    padding: 10px 22px;
+    background: #00c9af;
+    color: #000;
+    font-weight: 800;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background 0.25s ease;
+}
+
+.btn-resto:hover {
+    background: #00f7ff;
+}
+
+.btn-menu {
+    display: inline-block;
+    padding: 10px 22px;
+    background: transparent;
+    border: 2px solid #00ffe9;
+    color: #00ffe9;
+    font-weight: 800;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+.btn-menu:hover {
+    background: #00ffe9;
+    color: #000;
+}
+
+.menu-modal {
+    background: #071018;
+    border: 2px solid #00ffe9;
+    color: #fff;
+}
+
+.menu-modal .modal-header {
+    border-bottom: none;
+}
+
+.menu-modal .modal-title {
+    color: #ffffff;
+    font-weight: 700;
+    text-align: center;
+}
+
+.menu-caption {
+    color: #bfe9e6;
+    margin-top: 12px;
+    font-size: 0.95rem;
+    text-align: right;
+}
+
+@media (max-width: 900px) {
+    .restaurant-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .carousel,
+    .carousel img {
+        width: 100%;
+        height: 220px;
+    }
+
+    .resto-info {
+        width: 100%;
+        padding: 18px;
+        text-align: center;
+    }
+}
+
+/*musuems*/
+
+.museums {
+    padding: 60px 5%;
+    background: linear-gradient(180deg, #036958, #011e19);
+    color: #f9f9f9;
+    text-align: center;
+}
+
+.museums .title {
+    font-size: 3rem;
+    font-family: 'Dancing Script', cursive;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+.museums>p {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    color: #e6f2f1;
+}
+
+/* FLEX container for horizontal alignment */
+.museums-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Card style */
+.museum-card {
+    flex: 1 1 30%;
+    max-width: 30%;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 18px;
+    padding: 0;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.museum-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
+}
+
+/* carousel inside card */
+.museum-carousel {
+    width: 100%;
+    height: 320px;
+    position: relative;
+    background: #000;
+}
+
+.museum-carousel .carousel-inner {
+    height: 100%;
+}
+
+.museum-carousel .carousel-item img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+}
+
+/* prev / next buttons overlay */
+.museum-crsl-prev,
+.museum-crsl-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.45);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+}
+
+.museum-crsl-prev {
+    left: 12px;
+}
+
+.museum-crsl-next {
+    right: 12px;
+}
+
+.museum-crsl-prev-icon,
+.museum-crsl-next-icon {
+    width: 18px;
+    height: 18px;
+    filter: invert(100%);
+}
+
+/* info area */
+.museum-info {
+    padding: 18px 20px 24px;
+    text-align: left;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.01));
+    flex-grow: 1;
+}
+
+.museum-info h3 {
+    font-size: 1.8rem;
+    margin: 6px 0 8px;
+    color: #00ffe0;
+}
+
+.museum-info p {
+    font-size: 1.05rem;
+    color: #d7eceb;
+    margin-bottom: 14px;
+}
+
+.btn-restaurant {
+    display: inline-block;
+    padding: 10px 22px;
+    background: #00c9af;
+    color: #000;
+    font-weight: 800;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.btn-restaurant:hover {
+    background: #00f7ff;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 992px) {
+    .museum-card {
+        flex: 1 1 45%;
+        max-width: 45%;
+    }
+
+    .museum-carousel .carousel-item img {
+        height: 280px;
+    }
+}
+
+@media (max-width: 600px) {
+    .museum-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .museum-carousel .carousel-item img {
+        height: 220px;
+    }
+
+    .museum-info h3 {
+        font-size: 1.4rem;
+    }
+
+    .museum-info p {
+        font-size: 1rem;
     }
 }
