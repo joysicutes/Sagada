@@ -100,14 +100,12 @@ body {
     transform: scale(0.9);
 }
 
-
 .mini-navbar {
     background: rgba(0, 30, 30, 0.9);
     padding: 8px 0;
     text-align: left;
     position: fixed;
     top: 60px;
-    /* adjust based on your navbar height */
     width: 100%;
     z-index: 999;
     transform: translateY(-100%);
@@ -167,9 +165,10 @@ body {
 
 @media (max-width: 768px) {
     .mini-navbar ul {
-        justify-content: center; 
+        justify-content: center;
         gap: 15px;
         padding: 0 20px;
+        flex-wrap: wrap; /* allows wrapping if needed but keeps horizontal layout */
     }
 
     .mini-navbar ul li a {
@@ -179,10 +178,10 @@ body {
 
 @media (max-width: 480px) {
     .mini-navbar ul {
-        flex-direction: column; 
-        align-items: center;
-        gap: 12px;
-        padding: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 5px 10px;
     }
 
     .mini-navbar ul li a {
@@ -872,19 +871,52 @@ body {
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
 }
 
-@media (max-width: 900px) {
-    .categories-cards {
-        flex-direction: column;
-        align-items: center;
+
+/* Tablets */
+@media (max-width: 992px) {
+    .travel-text .tbanner-tagline,
+    .travel-text .tbanner2-tagline {
+        font-size: 2.3rem;
     }
 
-    .category-card {
-        width: 90%;
+    .travel-text p {
+        font-size: 1.2rem;
+    }
+
+    .catg-card img {
+        height: 220px;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 600px) {
+    .travel-banner {
+        padding: 100px 5%;
+    }
+
+    .travel-text .tbanner-tagline,
+    .travel-text .tbanner2-tagline {
+        font-size: 2rem;
+    }
+
+    .travel-text p {
+        font-size: 1rem;
         margin-bottom: 30px;
     }
 
-    .category-info h3 {
-        font-size: 1.5rem;
+    .travel-catg {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .catg-card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .info h3 {
+        font-size: 1.4rem;
     }
 }
 
