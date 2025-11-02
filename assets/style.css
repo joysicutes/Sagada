@@ -151,7 +151,7 @@ body {
     margin-top: 5px;
 }
 
-/* ===== Responsive ===== */
+
 @media (max-width: 992px) {
     .mini-navbar ul {
         padding: 0 30px;
@@ -168,7 +168,7 @@ body {
         justify-content: center;
         gap: 15px;
         padding: 0 20px;
-        flex-wrap: wrap; /* allows wrapping if needed but keeps horizontal layout */
+        flex-wrap: wrap; 
     }
 
     .mini-navbar ul li a {
@@ -181,7 +181,7 @@ body {
         justify-content: center;
         flex-wrap: wrap;
         gap: 10px;
-        padding: 5px 10px;
+        padding: 20px 10px;
     }
 
     .mini-navbar ul li a {
@@ -789,13 +789,16 @@ body {
 .travel-banner {
     width: 100%;
     min-height: 100vh;
-    /* Makes it almost full-screen height */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 80px 10%;
-    background: linear-gradient(180deg, #004d40, #0d1b2a);
+        background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+        url('sagada_bg2.webp') center/cover no-repeat;
+    padding: 0 10%;
+    position: relative;
+    animation: fadeIn 1.5s ease;
     color: #e0f7fa;
     text-align: center;
 }
@@ -1466,7 +1469,6 @@ body {
     color: #e6f2f1;
 }
 
-/* FLEX container for horizontal alignment */
 .museums-container {
     display: flex;
     flex-wrap: wrap;
@@ -1474,7 +1476,6 @@ body {
     gap: 30px;
 }
 
-/* Card style */
 .museum-card {
     flex: 1 1 30%;
     max-width: 30%;
@@ -1493,7 +1494,6 @@ body {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
 }
 
-/* carousel inside card */
 .museum-carousel {
     width: 100%;
     height: 320px;
@@ -1512,7 +1512,6 @@ body {
     display: block;
 }
 
-/* prev / next buttons overlay */
 .museum-crsl-prev,
 .museum-crsl-next {
     position: absolute;
@@ -1544,7 +1543,6 @@ body {
     filter: invert(100%);
 }
 
-/* info area */
 .museum-info {
     padding: 18px 20px 24px;
     text-align: left;
