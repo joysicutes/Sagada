@@ -976,6 +976,11 @@
             </div>
         </div>
 
+        <div class="copyright">
+            <p> Images used for illustrative purposes only. All rights belong to their owners.</p>
+        </div>
+
+
         <div class="footer-bottom">
             <p>&copy; 2025 Sagada Joyce Trip. All rights reserved.</p>
         </div>
@@ -983,6 +988,7 @@
 
 
     <script>
+          // js for navbar
         const navbar = document.querySelector('.navbar');
         const navLinks = document.querySelector('.nav-links');
         const menuToggle = document.querySelector('.menu-toggle');
@@ -1002,11 +1008,13 @@
 
     </script>
 
+  
     <script>
+          // js for mininavbar
         const miniNavbar = document.getElementById('miniNavbar');
 
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 200) { // show after 200px scroll
+            if (window.scrollY > 200) { 
                 miniNavbar.classList.add('visible');
             } else {
                 miniNavbar.classList.remove('visible');
@@ -1014,6 +1022,18 @@
         });
 
     </script>
+
+    <script>
+        window.addEventListener("scroll", function () {
+            const miniNavbar = document.getElementById("miniNavbar");
+            if (window.scrollY > 200) {
+                miniNavbar.classList.add("visible");
+            } else {
+                miniNavbar.classList.remove("visible");
+            }
+        });
+    </script>
+
 
 
 

@@ -15,7 +15,7 @@ body {
 }
 
 
-/*navbar*/
+/* navbar*/
 .navbar {
     width: 100%;
     position: fixed;
@@ -86,20 +86,6 @@ body {
     width: 100%;
 }
 
-.menu-toggle {
-    display: none;
-    font-size: 2rem;
-    color: #f5f5f5;
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.menu-toggle:active {
-    transform: scale(0.9);
-}
-
 .mini-navbar {
     background: rgba(0, 30, 30, 0.9);
     padding: 8px 0;
@@ -109,13 +95,8 @@ body {
     width: 100%;
     z-index: 999;
     transform: translateY(-100%);
-    transition: transform 0.3s ease, opacity 0.3s ease;
     opacity: 0;
-}
-
-.mini-navbar.visible {
-    transform: translateY(0);
-    opacity: 1;
+    transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
 .mini-navbar ul {
@@ -151,11 +132,33 @@ body {
     margin-top: 5px;
 }
 
+.mini-navbar.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
 
+/* for tab */
 @media (max-width: 992px) {
-    .mini-navbar ul {
-        padding: 0 30px;
+    .navbar .container {
+        width: 95%;
+    }
+
+    .nav-links {
         gap: 20px;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    .mini-navbar ul {
+        gap: 20px;
+        margin-right: 100px;
+        padding: 0 30px;
     }
 
     .mini-navbar ul li a {
@@ -163,31 +166,73 @@ body {
     }
 }
 
+/* for cp */
 @media (max-width: 768px) {
+    .navbar {
+        padding: 35px 0;
+    }
+
+    .logo img {
+        height: 35px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+
+    .mini-navbar {
+        top: 55px;
+        padding: 6px 0;
+    }
+
     .mini-navbar ul {
         justify-content: center;
         gap: 15px;
-        padding: 0 20px;
-        flex-wrap: wrap; 
-    }
-
-    .mini-navbar ul li a {
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .mini-navbar ul {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
-        padding: 20px 10px;
+        margin-right: 0;
+        padding: 0 15px;
     }
 
     .mini-navbar ul li a {
         font-size: 0.85rem;
     }
 }
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 25px 0;
+    }
+
+    .logo img {
+        height: 30px;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 0.8rem;
+    }
+
+    .mini-navbar {
+        top: 50px;
+        padding: 5px 0;
+    }
+
+    .mini-navbar ul {
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .mini-navbar ul li a {
+        font-size: 0.75rem;
+    }
+}
+
 
 /* frontview */
 .frontview {
@@ -657,6 +702,100 @@ body {
     }
 }
 
+/*how to get there*/
+
+.travel-car {
+    background: linear-gradient(180deg, #0d1b2a, #004d40);
+    color: #e0f7fa;
+    padding: 100px 10%;
+    text-align: center;
+}
+
+.travel-car .intro-car {
+    font-size: 3.8rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.travel-car .intro-p {
+    font-size: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto 50px;
+    line-height: 1.6;
+    color: #f2e3e3;
+}
+
+.travel-car .sagada {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.transport-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.option {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    padding: 30px 25px;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.option:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.option .icon {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.option:hover .icon {
+    color: #b2ebf2;
+    transform: scale(1.1);
+}
+
+.option h3 {
+    color: #4dd0e1;
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.option p {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: #e0f2f1;
+}
+
+@media (max-width: 768px) {
+    .how-to-get {
+        padding: 70px 8%;
+    }
+
+    .how-to-get .section-title {
+        font-size: 2.2rem;
+    }
+
+    .option h3 {
+        font-size: 1.4rem;
+    }
+
+    .option .icon {
+        font-size: 2.5rem;
+    }
+}
+
+
 
 
 /*footer*/
@@ -744,6 +883,13 @@ body {
     color: #80cbc4;
 }
 
+.copyright p {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #ffffff;
+    margin-top: 30px;
+}
+
 @media (max-width: 900px) {
     .footer-logo p {
         max-width: 100%;
@@ -794,7 +940,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 80px 10%;
-        background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
         url('sagada_bg2.webp') center/cover no-repeat;
     padding: 0 10%;
     position: relative;
@@ -813,7 +959,7 @@ body {
 .travel-text .tbanner2-tagline {
     font-size: 3rem;
     font-weight: 700;
-    color: #00bfa6;
+    color: #76ffed;
     font-family: 'Dancing Script', cursive;
     margin-top: 10px;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
@@ -877,6 +1023,7 @@ body {
 
 /* Tablets */
 @media (max-width: 992px) {
+
     .travel-text .tbanner-tagline,
     .travel-text .tbanner2-tagline {
         font-size: 2.3rem;

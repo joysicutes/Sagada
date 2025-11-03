@@ -5,12 +5,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Joyce - Sagada, Philippines</title>
-     <link rel="icon" type="image/png" href="assets/logob.png">
+    <link rel="icon" type="image/png" href="assets/logob.png">
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <link rel="stylesheet" href="assets/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -21,7 +22,7 @@
     <div class="navbar">
         <div class="container">
             <div class="logo">
-                <img src="assets/logo.png" onclick="window.location.href='index.html'"alt="Logo">
+                <img src="assets/logo.png" onclick="window.location.href='index.html'" alt="Logo">
             </div>
             <nav class="nav-links">
                 <a href="#frontview">Home</a>
@@ -40,7 +41,7 @@
 
         <div class="frontview-left">
             <p>Catch a glimpse of Sagada's magic. Where clouds kiss the mountains and every corner tells a story.</p>
-           <button class="fvleft" onclick="window.location.href='travel.html'">Off to Sagada</button>
+            <button class="fvleft" onclick="window.location.href='travel.html'">Off to Sagada</button>
         </div>
     </div>
 
@@ -168,12 +169,56 @@
         </div>
     </div>
 
+    <div class="travel-car" id="cars">
+        <div class="container">
+            <h2 class="intro-car">Route to <span class="sagada">Sagada</span> </h2>
+            <p class="intro-p">
+                Traveling to Sagada is an adventure on its own surrounded by breathtaking mountain views and winding
+                roads.
+                Here's a quick guide on how to reach this peaceful town.
+            </p>
+
+            <div class="transport-options">
+                <div class="option">
+                    <i class="fa-solid fa-car-side icon"></i>
+                    <h3>Private Car</h3>
+                    <p>
+                        From Manila, drive through NLEX-TPLEX-Baguio route or via Banaue. The trip takes around
+                        <strong>10-12 hours</strong>,
+                        depending on stops. Be prepared for mountain roads and cool weather!
+                    </p>
+                </div>
+
+                <div class="option">
+                    <i class="fa-solid fa-bus icon"></i>
+                    <h3>Taking Bus</h3>
+                    <p>
+                        Direct buses from Manila to Sagada (Coda Lines in Cubao) take approximately <strong>11-12
+                            hours</strong>.
+                        Alternatively, you can travel to Baguio first, then ride a bus or van to Sagada (around
+                        <strong>5-6 hours</strong>).
+                    </p>
+                </div>
+
+                <div class="option">
+                    <i class="fa-solid fa-plane-departure icon"></i>
+                    <h3>Through Air (via Baguio)</h3>
+                    <p>
+                        Fly to Baguio-Loakan Airport, then continue by land through Halsema Highway.
+                        The drive from Baguio to Sagada offers stunning views of the Cordillera mountains.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <footer class="footer">
         <div class="container-footer">
             <div class="footer-text">
                 <h1 class="footer-tagline">Find the Way,</h1>
                 <h1 class="footer2-tagline"> The Sagada Way.</h1>
-                <p>Uncover the wonders, traditions, and adventures hidden in Sagada’s mountains.</p>
+                <p>Uncover the wonders, traditions, and adventures hidden in Sagada's mountains.</p>
             </div>
 
             <div class="footer-contacts">
@@ -188,6 +233,10 @@
             </div>
         </div>
 
+        <div class="copyright">
+            <p> Images used for illustrative purposes only. All rights belong to their owners.</p>
+        </div>
+
         <div class="footer-bottom">
             <p>&copy; 2025 Sagada Joyce Trip. All rights reserved.</p>
         </div>
@@ -195,6 +244,7 @@
 
 
     <script>
+         // js for navbar
         const navbar = document.querySelector('.navbar');
         const navLinks = document.querySelector('.nav-links');
         const menuToggle = document.querySelector('.menu-toggle');
@@ -206,7 +256,7 @@
                 navbar.classList.remove('scrolled');
             }
         });
-        
+
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
